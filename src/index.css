@@ -1,0 +1,261 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+video {
+  position: absolute;
+  top:0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  pointer-events: none;
+  object-fit: cover;
+}
+
+.point {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes appear2 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+    0% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0;
+    }
+}
+
+
+p:nth-child(2){
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #ffba53;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+span {
+  background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png");
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  pointer-events: none;
+  background-size: cover;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: animate 7s linear;
+}
+
+.animatemouse {
+  animation: animate2 7s linear;
+}
+
+@keyframes frombottom {
+  0% {
+    transform: translateY(-100%);
+  }
+  
+  100% {
+    transform: translateY(100%);
+  }
+
+}
+@keyframes dance {
+  0% {
+    transform: translateX(-20px) rotate(-5deg) scale(1.1) translateY(100vh);
+  }
+  25% {
+    transform: translateX(20px) rotate(5deg) scale(0.9);
+  }
+  
+  50% {
+    transform: translateX(-20px) rotate(-5deg) scale(1.1);
+  }
+
+  75% {
+    transform: translateX(20px) rotate(5deg) scale(0.9);
+  }
+
+  100% {
+    transform: translateX(-20px) rotate(-5deg) scale(1.1) translateY(-100vh);
+  }
+}
+
+.collage {
+  position: relative;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30vw;
+}
+
+.collage img {
+  
+}
+
+.collage div {
+  /* position: relative; */
+  position: relative;
+  transform: scale(2);
+  animation: dance 1.95s ease infinite;
+  opacity: .6;
+  box-shadow: rgba(245, 207, 37, 0.644) 0px 15px 35px;
+}
+
+.collage div::after {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: center;
+  content: "💛";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.collage div:nth-of-type(1)::after {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  justify-content: center;
+  content: "🧡";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes animate {
+  0%{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    filter: hue-rotate(30deg) brightness(1.5);
+  }
+  100%{
+    transform: translate(-50%, -5000%);
+    opacity: 0;
+    filter: hue-rotate(200deg);
+  }
+}
+@keyframes animate2 {
+  0%{
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    /* filter: hue-rotate(30deg) brightness(1.5); */
+  }
+  100%{
+    transform: translate(-50%, -5000%);
+    opacity: 0;
+    /* filter: hue-rotate(200deg); */
+  }
+}
